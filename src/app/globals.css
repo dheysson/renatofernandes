@@ -26,27 +26,27 @@
   }
 
   .h1 {
-    @apply text-[2.8rem] md:text-[6rem] font-bold leading-[120%];
+    @apply text-[2.8rem] md:text-[6rem] font-bold leading-[120%] font-playfair;
   }
 
   .h2 {
-    @apply text-[2rem] md:text-[5rem] font-bold leading-[120%];
+    @apply text-[2rem] md:text-[5rem] font-bold leading-[120%] font-playfair;
   }
 
   .h3 {
-    @apply text-[1.8rem] lg:text-[4rem] font-bold leading-[110%];
+    @apply text-[1.8rem] lg:text-[4rem] font-bold leading-[110%] font-playfair;
   }
 
   .h4 {
-    @apply text-[1.3rem] lg:text-[3rem] font-bold leading-[110%];
+    @apply text-[1.3rem] lg:text-[3rem] font-bold leading-[110%] font-playfair;
   }
 
   .h5 {
-    @apply text-[2rem] font-bold leading-[120%];
+    @apply text-[2rem] font-bold leading-[120%] font-playfair;
   }
 
   .h6 {
-    @apply text-[1.3rem] md:text-[1.5rem] font-bold leading-[90%];
+    @apply text-[1.3rem] md:text-[1.5rem] font-bold leading-[90%] font-playfair;
   }
 
   .a {
@@ -91,24 +91,24 @@
   }
 
   .gallery {
-    @apply gap-y-4 lg:gap-y-0 lg:gap-x-4 relative h-[640px] max-h-[640px];
+    @apply flex flex-col gap-y-2 lg:gap-y-0 lg:gap-x-2 lg:flex-row;
   }
 
   .gallery_div {
-    @apply w-full lg:w-[128px] max-w-[1024px] h-[96px] lg:h-full relative transition-all duration-700;
+    @apply lg:w-[calc(512px/3)] w-[384px] h-[calc(512px/3)] lg:h-[640px] relative transition-all duration-500 ;
   }
+
   .gallery_div.active {
-    @apply w-[512px] h-full;
+    @apply w-[384px] lg:w-[512px] h-[512px] lg:h-[640px] transition-all duration-500;
   }
   .gallery_div.active .gallery_img {
-    @apply opacity-100;
+    @apply opacity-100 object-center;
   }
   .gallery_div.active .gallery_view {
     @apply opacity-30;
   }
-
   .gallery_img {
-    @apply w-full h-full object-cover rounded-xl object-left opacity-30 transition-all;
+    @apply w-full h-full object-cover rounded-xl object-left opacity-20 transition-all duration-500;
   }
   .gallery_view {
     @apply flex flex-row justify-center items-center absolute left-0 bottom-0 m-4 w-[42px] h-[42px] rounded-2xl bg-white cursor-pointer hover:scale-110 transition-all;

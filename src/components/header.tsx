@@ -14,7 +14,7 @@ import {ImWhatsapp} from 'react-icons/im';
 
 export default function Header() {
     return (
-        <motion.header initial={{opacity: 0}} animate={{opacity: 1}} transition={transition1} className='fixed z-50 flex flex-row w-screen justify-between h-[8rem] p-2 lg:p-10'>
+        <motion.header initial={{opacity: 0}} animate={{opacity: 1}} transition={transition1} className='fixed z-50 flex flex-row w-screen justify-between lg:h-[8rem] p-2 lg:p-10'>
             <img className='w-[96px] h-[54px] rounded-md' src="/logo.jpg" alt="" />
             <ul className='hidden lg:flex flex-row gap-x-12 text-[#131313]'>
                 <li> <a data-index="0" href="#" className='a text-[1.1rem]'>Início</a> </li>

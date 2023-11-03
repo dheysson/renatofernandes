@@ -22,13 +22,12 @@ const playfair = Playfair_Display({subsets: ['latin'], weight: ['400']});
 import {GrFormView} from 'react-icons/gr';
 import {FiChevronDown} from 'react-icons/fi';
 
-import {ImFacebook} from 'react-icons/im';
 import {ImInstagram} from 'react-icons/im';
 import {ImWhatsapp} from 'react-icons/im';
 
 import {BsSend} from 'react-icons/bs';
 
-import {useEffect, useState} from 'react'
+import {useState} from 'react'
 
 import emailJS from '@emailjs/browser';
 
@@ -139,7 +138,9 @@ export default function Home() {
 
           <motion.div variants={leftward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1} className='absolute bottom-0 w-full h-[82%] lg:h-[75%] -z-[5] bg-[#d3d3ff]'></motion.div>
         </div>
-        <motion.div variants={leftward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d} className='slider w-screen h-[1rem] bg-[#131313]'></motion.div>
+        <div className='slider w-screen h-[1rem] relative'>
+          <motion.div variants={leftward} initial='variantInit' animate='variantAnim' transition={transition1_d} className='absolute left-0 w-full h-full bg-[#131313]'></motion.div>
+        </div>
       </div>
 
       {/* HERO - MOBILE  */}
@@ -159,24 +160,26 @@ export default function Home() {
 
           {/* Image  */}
           <motion.div variants={righttoleft} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d}>
-            <img src="/photographer.jpg" alt="" className='w-full max-w-[256px]'/>
+            <img src="/photographer.jpg" alt="" className='w-full max-w-[256px] rounded-xl'/>
           </motion.div>
 
           <motion.div variants={leftward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1} className='absolute bottom-0 w-full h-[82%] lg:h-[72%] -z-[5] bg-[#d3d3ff]'></motion.div>
         </div>
-        <div className='slider w-screen h-[1rem] bg-[#131313]'></div>
-
+        <div  className='slider w-full h-[0.5rem] relative'>
+          <motion.div variants={leftward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d} className='absolute left-0 w-full h-full bg-[#131313]'></motion.div>
+        </div>
+        <motion.img variants={upward} initial="variantInit" whileInView="variantAnim" viewport={{once: true}} transition={transition1_d} src="/photographer.jpg" alt="" />
       </div>
 
       {/* SOBRE MIM  */}
-      <motion.div className='w-screen max-h-max relative'>
+      <motion.div className='about w-screen max-h-max relative'>
         <div className='relative w-screen'>
           <motion.h2 variants={upward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d}  className='h2 portfolio my-3 lg:my-8 lg:mx-0 w-screen text-center'>Sobre mim</motion.h2>
         </div>
         <div className='flex flex-col gap-y-8 lg:gap-y-0 lg:flex-row w-screen lg:gap-x-40 justify-around lg:justify-center relative items-center px-4'>
           {/* Text & Button */}
           <motion.div variants={lefttoright} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d} className='order-2 flex flex-col justify-center gap-y-4 lg:gap-y-14 m-2'>
-            <div className={`${playfair.className} w-[16rem] lg:w-full max-w-[36rem]`}>
+            <div className='w-[18rem] lg:w-full max-w-[36rem]'>
               <h3 className='p small lg:medium'>Durante a pandemia, enquanto as aulas eram realizadas remotamente, percebi que eu estava muito tempo ocioso. No entanto, deparei-me com um <b>interessante</b> nicho de conteúdo relacionando à fotografia, 
               o que despertou minha <b>curiosidade</b>. Comecei a experimentar tirar fotos com meu celular, capturando desde objetos até retratos de amigos e familiares.
               </h3>
@@ -191,7 +194,7 @@ export default function Home() {
 
           {/* Image  */}
           <motion.div variants={righttoleft} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d} className='order-1 flex flex-row justify-center'>
-            <img src="/photographer.jpg" alt="" className='w-[50%] lg:w-full max-w-[480px]'/>
+            <img src="/photographer.jpg" alt="" className='w-[50%] lg:w-full max-w-[480px] rounded-xl'/>
           </motion.div>
 
         </div>
@@ -200,95 +203,92 @@ export default function Home() {
       </motion.div>
 
       {/* PORTFOLIO  */}
-      <motion.div className='container w-full max-w-[75rem] max-h-max'>
+      <motion.div className='portfolio'>
         <div className='relative w-screen'>
           <motion.div variants={leftward} initial='variantInit' whileInView='variantAnim' transition={transition1_d} viewport={{once: true}} className='absolute left-0 bottom-0 -z-[1] h-[65%] bg-[#d3d3ff]'></motion.div >
-          <motion.h2 variants={upward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d}  className='h2 portfolio my-8 lg:mx-0 w-screen text-center'>Portfólio</motion.h2>
+          <motion.h2 variants={upward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d}  className='h2 portfolio my-20 lg:mx-0 w-screen text-center'>Portfólio</motion.h2>
         </div>
-        <div className='flex flex-col gap-y-20 mx-4 lg:mx-[8rem] lg:w-screen'>
-          <motion.div variants={lefttoright} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d} className='gallery flex flex-col lg:flex-row'>
-            <div className='gallery_div active g1'>
-              <img className='gallery_img' src="/portfolio/gallery1/gallery (1).jpg" alt="" />
-              <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
-            </div>
-            <div className='gallery_div g1'>
-              <img className='gallery_img' src="/portfolio/gallery1/gallery (2).jpg" alt="" />
-              <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
-            </div>
-            <div className='gallery_div g1'>
-              <img className='gallery_img' src="/portfolio/gallery1/gallery (3).jpg" alt="" />
-              <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
-            </div>
-            <div className='gallery_div g1'>
-              <img className='gallery_img' src="/portfolio/gallery1/gallery (4).jpg" alt="" />
-              <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
-            </div>
-          </motion.div>
-          <motion.div variants={lefttoright} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d} className='gallery flex flex-col lg:flex-row'>
-            <div className='gallery_div active g2'>
-              <img className='gallery_img' src="/portfolio/gallery2/gallery (1).jpg" alt="" />
-              <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
-
-            </div>
-            <div className='gallery_div g2'>
-              <img className='gallery_img' src="/portfolio/gallery2/gallery (2).jpg" alt="" />
-              <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
-
-            </div>
-            <div className='gallery_div g2'>
-              <img className='gallery_img' src="/portfolio/gallery2/gallery (3).jpg" alt="" />
-              <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
-
-            </div>
-          </motion.div>
-          <motion.div variants={lefttoright} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d} className='gallery flex flex-col lg:flex-row'>
-            <div className='gallery_div active g3'>
-              <img className='gallery_img' src="/portfolio/gallery3/gallery (3).jpg" alt="" />
-              <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
-            </div>
-            <div className='gallery_div g3'>
-              <img className='gallery_img' src="/portfolio/gallery3/gallery (5).jpg" alt="" />
-              <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
-
-            </div>
-            <div className='gallery_div g3'>
-              <img className='gallery_img' src="/portfolio/gallery3/gallery (1).jpg" alt="" />
-              <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
-
-            </div>
-            <div className='gallery_div g3'>
-              <img className='gallery_img' src="/portfolio/gallery3/gallery (4).jpg" alt="" />
-              <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
-
-            </div>
-            <div className='gallery_div g3'>
-              <img className='gallery_img' src="/portfolio/gallery3/gallery (2).jpg" alt="" />
-              <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
-
-            </div>
-          </motion.div>
-          <motion.div variants={lefttoright} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d} className='gallery flex flex-col lg:flex-row'>
-            <div className='gallery_div active g4'>
-              <img className='gallery_img' src="/portfolio/gallery4/gallery (3).jpg" alt="" />
-              <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
-
-            </div>
-            <div className='gallery_div g4'>
-              <img className='gallery_img' src="/portfolio/gallery4/gallery (2).jpg" alt="" />
-              <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
-
-            </div>
-            <div className='gallery_div g4'>
-              <img className='gallery_img' src="/portfolio/gallery4/gallery (4).jpg" alt="" />
-              <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
-
-            </div>
-            <div className='gallery_div g4'>
-              <img className='gallery_img' src="/portfolio/gallery4/gallery (1).jpg" alt="" />
-              <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
-
-            </div>
-          </motion.div>
+        <div className='container mx-auto flex flex-col gap-y-10'>
+          <div className='ensaio_estudio mx-auto'>
+            <motion.h4 variants={upward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1} className='h4 my-4'>Ensaio de estúdio</motion.h4>
+            <motion.div variants={upward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d} className='gallery'>
+              <div className='gallery_div active g1'>
+                <img className='gallery_img' src="/portfolio/ensaioestudio/gallery (1).jpg" alt="" />
+                <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
+              </div>
+              <div className='gallery_div g1'>
+                <img className='gallery_img' src="/portfolio/ensaioestudio/gallery (2).jpg" alt="" />
+                <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
+              </div>
+              <div className='gallery_div g1'>
+                <img className='gallery_img' src="/portfolio/ensaioestudio/gallery (3).jpg" alt="" />
+                <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
+              </div>
+            </motion.div>
+          </div>
+          <div className='ensaio_infantil mx-auto'>
+            <motion.h4 variants={upward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1} className='h4 my-4'>Ensaio infantil</motion.h4>
+            <motion.div variants={upward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d} className='gallery'>
+              <div className='gallery_div active g2'>
+                <img className='gallery_img' src="/portfolio/ensaioinfantil/gallery (1).jpg" alt="" />
+                <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
+              </div>
+              <div className='gallery_div g2'>
+                <img className='gallery_img' src="/portfolio/ensaioinfantil/gallery (2).jpg" alt="" />
+                <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
+              </div>
+              <div className='gallery_div g2'>
+                <img className='gallery_img' src="/portfolio/ensaioinfantil/gallery (3).jpg" alt="" />
+                <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
+              </div>
+              <div className='gallery_div g2'>
+                <img className='gallery_img' src="/portfolio/ensaioinfantil/gallery (4).jpg" alt="" />
+                <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
+              </div>
+            </motion.div>
+          </div>
+          <div className='ensaio_moda mx-auto'>
+            <motion.h4 variants={upward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1} className='h4 my-4'>Ensaio de moda</motion.h4>
+            <motion.div variants={upward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d} className='gallery'>
+              <div className='gallery_div active g3'>
+                <img className='gallery_img' src="/portfolio/ensaiomoda/gallery (1).jpg" alt="" />
+                <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
+              </div>
+              <div className='gallery_div g3'>
+                <img className='gallery_img' src="/portfolio/ensaiomoda/gallery (2).jpg" alt="" />
+                <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
+              </div>
+              <div className='gallery_div g3'>
+                <img className='gallery_img' src="/portfolio/ensaiomoda/gallery (3).jpg" alt="" />
+                <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
+              </div>
+              <div className='gallery_div g3'>
+                <img className='gallery_img' src="/portfolio/ensaiomoda/gallery (4).jpg" alt="" />
+                <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
+              </div>
+            </motion.div>
+          </div>
+          <div className='makingof mx-auto'>
+            <motion.h4 variants={upward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1} className='h4 my-4'>Ensaio de moda</motion.h4>
+            <motion.div variants={upward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d} className='gallery'>
+              <div className='gallery_div active g4'>
+                <img className='gallery_img' src="/portfolio/makingof/gallery (1).jpg" alt="" />
+                <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
+              </div>
+              <div className='gallery_div g4'>
+                <img className='gallery_img' src="/portfolio/makingof/gallery (2).jpg" alt="" />
+                <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
+              </div>
+              <div className='gallery_div g4'>
+                <img className='gallery_img' src="/portfolio/makingof/gallery (3).jpg" alt="" />
+                <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
+              </div>
+              <div className='gallery_div g4'>
+                <img className='gallery_img' src="/portfolio/makingof/gallery (4).jpg" alt="" />
+                <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </motion.div>
 

@@ -26,7 +26,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt">
-      <body className={poppins.className}>
+      <body className={playfair.className}>
         <Header />
         {children }
         {/* <Footer /> */}
