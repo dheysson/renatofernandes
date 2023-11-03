@@ -116,7 +116,7 @@ export default function Home() {
   }
 
   return (
-    <motion.section className='flex flex-col gap-y-36'>
+    <motion.section className='flex flex-col gap-y-40'>
       {/* HERO  */}
       <div className='hero w-full h-full hidden lg:flex flex-col justify-center items-center mt-48'>
         {/* HERO  */}
@@ -137,8 +137,9 @@ export default function Home() {
             <img src="/photographer.jpg" alt="" className='w-full max-w-[480px]'/>
           </motion.div>
 
-          <motion.div variants={leftward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1} className='absolute bottom-0 w-full h-[82%] lg:h-[75%] -z-[5] bg-[#ceceff]'></motion.div>
+          <motion.div variants={leftward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1} className='absolute bottom-0 w-full h-[82%] lg:h-[75%] -z-[5] bg-[#d3d3ff]'></motion.div>
         </div>
+        <motion.div variants={leftward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d} className='slider w-screen h-[1rem] bg-[#131313]'></motion.div>
       </div>
 
       {/* HERO - MOBILE  */}
@@ -161,18 +162,51 @@ export default function Home() {
             <img src="/photographer.jpg" alt="" className='w-full max-w-[256px]'/>
           </motion.div>
 
-          <motion.div variants={leftward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1} className='absolute bottom-0 w-full h-[82%] lg:h-[72%] -z-[5] bg-[#ceceff]'></motion.div>
+          <motion.div variants={leftward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1} className='absolute bottom-0 w-full h-[82%] lg:h-[72%] -z-[5] bg-[#d3d3ff]'></motion.div>
         </div>
+        <div className='slider w-screen h-[1rem] bg-[#131313]'></div>
+
       </div>
+
+      {/* SOBRE MIM  */}
+      <motion.div className='w-screen max-h-max relative'>
+        <div className='relative w-screen'>
+          <motion.h2 variants={upward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d}  className='h2 portfolio my-3 lg:my-8 lg:mx-0 w-screen text-center'>Sobre mim</motion.h2>
+        </div>
+        <div className='flex flex-col gap-y-8 lg:gap-y-0 lg:flex-row w-screen lg:gap-x-40 justify-around lg:justify-center relative items-center px-4'>
+          {/* Text & Button */}
+          <motion.div variants={lefttoright} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d} className='order-2 flex flex-col justify-center gap-y-4 lg:gap-y-14 m-2'>
+            <div className={`${playfair.className} w-[16rem] lg:w-full max-w-[36rem]`}>
+              <h3 className='p small lg:medium'>Durante a pandemia, enquanto as aulas eram realizadas remotamente, percebi que eu estava muito tempo ocioso. No entanto, deparei-me com um <b>interessante</b> nicho de conteúdo relacionando à fotografia, 
+              o que despertou minha <b>curiosidade</b>. Comecei a experimentar tirar fotos com meu celular, capturando desde objetos até retratos de amigos e familiares.
+              </h3>
+              <br />
+              <h3 className='p small lg:medium'>
+                Com o desejo de aprimorar meu <b>conhecimento</b>, comecei a realizar ensaios utilizando um equipamento semiprofissional. 
+                Entretanto, precisei me afastar da fotografia por um período. Agora, em 2023, enquanto trabalho no ramo da beleza e estética, voltei a praticar fotografia 
+                visando aumentar a <b>visibilidade</b> e <b>reconhecimento</b> dos meus trabalhos.
+              </h3>
+            </div>
+          </motion.div>
+
+          {/* Image  */}
+          <motion.div variants={righttoleft} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d} className='order-1 flex flex-row justify-center'>
+            <img src="/photographer.jpg" alt="" className='w-[50%] lg:w-full max-w-[480px]'/>
+          </motion.div>
+
+        </div>
+
+        <motion.div variants={leftward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1} className='absolute bottom-0 w-full h-[82%] lg:h-[88%] -z-[5] bg-[#d3d3ff]'></motion.div>
+      </motion.div>
 
       {/* PORTFOLIO  */}
       <motion.div className='container w-full max-w-[75rem] max-h-max'>
         <div className='relative w-screen'>
-          <motion.div variants={leftward} initial='variantInit' whileInView='variantAnim' transition={transition1_d} viewport={{once: true}} className='absolute left-0 bottom-0 -z-[1] h-[65%] bg-[#ceceff]'></motion.div >
+          <motion.div variants={leftward} initial='variantInit' whileInView='variantAnim' transition={transition1_d} viewport={{once: true}} className='absolute left-0 bottom-0 -z-[1] h-[65%] bg-[#d3d3ff]'></motion.div >
           <motion.h2 variants={upward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d}  className='h2 portfolio my-8 lg:mx-0 w-screen text-center'>Portfólio</motion.h2>
         </div>
-        <div className='flex flex-col gap-y-20 mx-4 lg:mx-[8rem] w-screen'>
-          <motion.div variants={righttoleft} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d} className='gallery flex flex-col lg:flex-row'>
+        <div className='flex flex-col gap-y-20 mx-4 lg:mx-[8rem] lg:w-screen'>
+          <motion.div variants={lefttoright} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d} className='gallery flex flex-col lg:flex-row'>
             <div className='gallery_div active g1'>
               <img className='gallery_img' src="/portfolio/gallery1/gallery (1).jpg" alt="" />
               <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
@@ -190,7 +224,7 @@ export default function Home() {
               <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
             </div>
           </motion.div>
-          <motion.div variants={righttoleft} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d} className='gallery flex flex-col lg:flex-row'>
+          <motion.div variants={lefttoright} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d} className='gallery flex flex-col lg:flex-row'>
             <div className='gallery_div active g2'>
               <img className='gallery_img' src="/portfolio/gallery2/gallery (1).jpg" alt="" />
               <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
@@ -207,7 +241,7 @@ export default function Home() {
 
             </div>
           </motion.div>
-          <motion.div variants={righttoleft} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d} className='gallery flex flex-col lg:flex-row'>
+          <motion.div variants={lefttoright} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d} className='gallery flex flex-col lg:flex-row'>
             <div className='gallery_div active g3'>
               <img className='gallery_img' src="/portfolio/gallery3/gallery (3).jpg" alt="" />
               <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
@@ -233,7 +267,7 @@ export default function Home() {
 
             </div>
           </motion.div>
-          <motion.div variants={righttoleft} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d} className='gallery flex flex-col lg:flex-row'>
+          <motion.div variants={lefttoright} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d} className='gallery flex flex-col lg:flex-row'>
             <div className='gallery_div active g4'>
               <img className='gallery_img' src="/portfolio/gallery4/gallery (3).jpg" alt="" />
               <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
@@ -259,7 +293,7 @@ export default function Home() {
       </motion.div>
 
       {/* CONTATO */}
-      <div className='hidden container lg:flex flex-row items-center relative w-screen'>
+      <div className='hidden container lg:flex flex-row items-center relative w-screen'>'
         <div className='flex flex-col items-center w-screen'>
           <motion.h2 variants={upward} initial='variantInit' whileInView='variantAnim' transition={transition1} viewport={{once: true}} className='h2 my-10 text-center'>Contate-me</motion.h2>
           <motion.div variants={upward} initial='variantInit' whileInView='variantAnim' transition={transition1_d} viewport={{once: true}} className='flex flex-row gap-x-10 p-4 lg:p-10 '>
@@ -298,12 +332,12 @@ export default function Home() {
           <button className='btn text-[1rem] max-w-max uppercase m-4' onClick={() => goTop()}>Voltar para o topo</button>
         </div>
 
-        <div className='absolute w-screen bottom-0 h-[89%] lg:h-[84%] -z-[1] bg-[#ceceff]'></div>
+        <div className='absolute w-screen bottom-0 h-[89%] lg:h-[84%] -z-[1] bg-[#d3d3ff]'></div>
       </div>
 
       {/* CONTATO - MOBILE */}
       <div className='flex container lg:hidden flex-col items-center relative'>
-        <div className='absolute w-screen bottom-0 h-[89%] lg:h-[80%] -z-[1] bg-[#ceceff]'></div>
+        <div className='absolute w-screen bottom-0 h-[89%] lg:h-[80%] -z-[1] bg-[#d3d3ff]'></div>
         <motion.h2 variants={upward} initial='variantInit' whileInView='variantAnim' transition={transition1} viewport={{once: true}} className='h2 my-10 text-center'>Contate-me</motion.h2>
         <motion.div variants={upward} initial='variantInit' whileInView='variantAnim' transition={transition1_d} viewport={{once: true}} className='flex flex-row justify-evenly p-4 lg:p-10 '>
           <div className='w-full max-w-[24rem] p-4 lg:p-0'>
