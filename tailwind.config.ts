@@ -7,12 +7,11 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    fontFamily: {
+      primary: 'Playfair Display',
+      secondary: 'Archivo'
+    },
     extend: {
-      fontFamily: {
-        'playfair': 'Playfair_Display',
-        'poppins': 'Poppins',
-        'archivo': 'Archivo'
-      },
       dropShadow: {
         glow: ['0px 0px 24px rgba(255,168,54,0.6)']
       },

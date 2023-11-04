@@ -26,35 +26,35 @@
   }
 
   .h1 {
-    @apply text-[2.8rem] md:text-[6rem] font-bold leading-[120%] font-playfair;
+    @apply text-[2.8rem] md:text-[6rem] font-bold leading-[120%] font-primary;
   }
 
   .h2 {
-    @apply text-[2rem] md:text-[5rem] font-bold leading-[120%] font-playfair;
+    @apply text-[2rem] md:text-[5rem] font-bold leading-[120%] font-primary;
   }
 
   .h3 {
-    @apply text-[1.8rem] lg:text-[4rem] font-bold leading-[110%] font-playfair;
+    @apply text-[1.8rem] lg:text-[4rem] font-bold leading-[110%] font-primary;
   }
 
   .h4 {
-    @apply text-[1.3rem] lg:text-[3rem] font-bold leading-[110%] font-playfair;
+    @apply text-[1.3rem] lg:text-[3rem] font-bold leading-[110%] font-primary;
   }
 
   .h5 {
-    @apply text-[2rem] font-bold leading-[120%] font-playfair;
+    @apply text-[2rem] font-bold leading-[120%] font-primary;
   }
 
   .h6 {
-    @apply text-[1.3rem] md:text-[1.5rem] font-bold leading-[90%] font-playfair;
+    @apply text-[1.3rem] md:text-[1.5rem] font-bold leading-[90%] font-primary;
   }
 
   .a {
-    @apply text-[1.2rem] font-poppins hover:opacity-[60%];
+    @apply font-secondary text-[1.2rem] hover:opacity-[60%];
   }
 
   .p {
-    @apply font-normal max-w-[43rem] font-poppins leading-[110%];
+    @apply font-normal max-w-[43rem] leading-[110%] font-secondary;
   }
 
   .p.large {
@@ -95,11 +95,11 @@
   }
 
   .gallery_div {
-    @apply lg:w-[calc(512px/3)] w-[384px] h-[calc(512px/3)] lg:h-[640px] relative transition-all duration-500 ;
+    @apply lg:w-[calc(512px/3)] w-[320px] h-[calc(512px/3)] lg:h-[640px] relative transition-all duration-500 ;
   }
 
   .gallery_div.active {
-    @apply w-[384px] lg:w-[512px] h-[512px] lg:h-[640px] transition-all duration-500;
+    @apply w-[320px] lg:w-[512px] h-[512px] lg:h-[640px] transition-all duration-500;
   }
   .gallery_div.active .gallery_img {
     @apply opacity-100 object-center;
@@ -108,7 +108,7 @@
     @apply opacity-30;
   }
   .gallery_img {
-    @apply w-full h-full object-cover rounded-xl object-left opacity-20 transition-all duration-500;
+    @apply w-full h-full object-cover rounded-xl object-left opacity-30 transition-all duration-500;
   }
   .gallery_view {
     @apply flex flex-row justify-center items-center absolute left-0 bottom-0 m-4 w-[42px] h-[42px] rounded-2xl bg-white cursor-pointer hover:scale-110 transition-all;

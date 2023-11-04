@@ -12,12 +12,6 @@ import { item } from '../variants/item';
 import { righttoleft } from '../variants/righttoleft';
 import { lefttoright } from '../variants/lefttoright';
 
-import { Archivo } from "next/font/google"
-const archivo = Archivo({subsets: ['latin'], weight: ['400']});
-
-import { Playfair_Display } from 'next/font/google';
-const playfair = Playfair_Display({subsets: ['latin'], weight: ['400']});
-
 //import icons
 import {GrFormView} from 'react-icons/gr';
 import {FiChevronDown} from 'react-icons/fi';
@@ -101,6 +95,10 @@ export default function Home() {
       document.querySelectorAll('.g4').forEach(element => element.classList.remove('active'));
       e.currentTarget.parentNode.classList.add('active');
 
+    } else if(e.currentTarget.parentNode.classList.contains('g5')) {
+      document.querySelectorAll('.g5').forEach(element => element.classList.remove('active'));
+      e.currentTarget.parentNode.classList.add('active');
+
     }
   }
 
@@ -122,18 +120,18 @@ export default function Home() {
         <div className='flex flex-row w-screen lg:gap-x-40 justify-around lg:justify-center relative px-4'>
           {/* Text & Button */}
           <motion.div variants={lefttoright} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d} className='flex flex-col justify-center gap-y-4 lg:gap-y-14 m-2'>
-            <div className={`${playfair.className} w-[16rem] lg:w-full max-w-[36rem]`}>
+            <div className={`w-[16rem] lg:w-full max-w-[36rem]`}>
               <h3 className='h3'>Olá!</h3>
               <h4 className='h4'>Eu sou Renato Fernandes,</h4>
               <h4 className='h4'>Fotógrafo profissional.</h4>
             </div>
 
-            <button onClick={() => goTo()} className={`${archivo.className} btn px-2 py-1 lg:py-[48px] lg:px-[42px] max-w-max text-[2rem]`}><FiChevronDown /></button>
+            <button onClick={() => goTo()} className={`btn px-2 py-1 lg:py-[48px] lg:px-[42px] max-w-max text-[2rem]`}><FiChevronDown /></button>
           </motion.div>
 
           {/* Image  */}
           <motion.div variants={righttoleft} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d}>
-            <img src="/photographer.jpg" alt="" className='w-full max-w-[480px]'/>
+            <img src="/photographer.webp" alt="" className='w-full max-w-[480px]'/>
           </motion.div>
 
           <motion.div variants={leftward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1} className='absolute bottom-0 w-full h-[82%] lg:h-[75%] -z-[5] bg-[#d3d3ff]'></motion.div>
@@ -149,18 +147,18 @@ export default function Home() {
         <div className='flex flex-row w-screen lg:gap-x-40 justify-around lg:justify-center relative px-4'>
           {/* Text & Button */}
           <motion.div variants={lefttoright} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d} className='flex flex-col justify-center gap-y-4 lg:gap-y-14 m-2'>
-            <div className={`${playfair.className} w-[16rem] lg:w-full max-w-[36rem]`}>
+            <div className={`w-[16rem] lg:w-full max-w-[36rem]`}>
               <h3 className='h3'>Olá!</h3>
               <h4 className='h4'>Eu sou Renato Fernandes,</h4>
               <h4 className='h4'>Fotógrafo profissional.</h4>
             </div>
 
-            <button onClick={() => goTo()} className={`${archivo.className} btn px-2 py-1 lg:py-[48px] lg:px-[42px] max-w-max text-[2rem]`}><FiChevronDown /></button>
+            <button onClick={() => goTo()} className={`btn px-2 py-1 lg:py-[48px] lg:px-[42px] max-w-max text-[2rem]`}><FiChevronDown /></button>
            </motion.div>
 
           {/* Image  */}
           <motion.div variants={righttoleft} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d}>
-            <img src="/photographer.jpg" alt="" className='w-full max-w-[256px] rounded-xl'/>
+            <img src="/photographer.webp" alt="" className='w-full max-w-[256px] rounded-xl'/>
           </motion.div>
 
           <motion.div variants={leftward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1} className='absolute bottom-0 w-full h-[82%] lg:h-[72%] -z-[5] bg-[#d3d3ff]'></motion.div>
@@ -168,7 +166,7 @@ export default function Home() {
         <div  className='slider w-full h-[0.5rem] relative'>
           <motion.div variants={leftward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d} className='absolute left-0 w-full h-full bg-[#131313]'></motion.div>
         </div>
-        <motion.img variants={upward} initial="variantInit" whileInView="variantAnim" viewport={{once: true}} transition={transition1_d} src="/photographer.jpg" alt="" />
+        <motion.img variants={upward} initial="variantInit" whileInView="variantAnim" viewport={{once: true}} transition={transition1_d} src="/photographer.webp" alt="" />
       </div>
 
       {/* SOBRE MIM  */}
@@ -194,7 +192,7 @@ export default function Home() {
 
           {/* Image  */}
           <motion.div variants={righttoleft} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d} className='order-1 flex flex-row justify-center'>
-            <img src="/photographer.jpg" alt="" className='w-[50%] lg:w-full max-w-[480px] rounded-xl'/>
+            <img src="/photographer.webp" alt="" className='w-[50%] lg:w-full max-w-[480px] rounded-xl'/>
           </motion.div>
 
         </div>
@@ -208,83 +206,100 @@ export default function Home() {
           <motion.div variants={leftward} initial='variantInit' whileInView='variantAnim' transition={transition1_d} viewport={{once: true}} className='absolute left-0 bottom-0 -z-[1] h-[65%] bg-[#d3d3ff]'></motion.div >
           <motion.h2 variants={upward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d}  className='h2 portfolio my-20 lg:mx-0 w-screen text-center'>Portfólio</motion.h2>
         </div>
-        <div className='container mx-auto flex flex-col gap-y-10'>
-          <div className='ensaio_estudio mx-auto'>
-            <motion.h4 variants={upward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1} className='h4 my-4'>Ensaio de estúdio</motion.h4>
+        <div className='container w-full max-w-[75rem] mx-auto flex flex-col gap-y-10 items-center lg:items-start'>
+          <div className='ensaio_estudio'>
+            <motion.h4 variants={upward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1} className='h4 my-4 font-secondary'>Ensaio de estúdio</motion.h4>
             <motion.div variants={upward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d} className='gallery'>
               <div className='gallery_div active g1'>
-                <img className='gallery_img' src="/portfolio/ensaioestudio/gallery (1).jpg" alt="" />
+                <img className='gallery_img' src="/portfolio/ensaioestudio/gallery (1).webp" alt="" />
                 <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
               </div>
               <div className='gallery_div g1'>
-                <img className='gallery_img' src="/portfolio/ensaioestudio/gallery (2).jpg" alt="" />
+                <img className='gallery_img' src="/portfolio/ensaioestudio/gallery (2).webp" alt="" />
                 <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
               </div>
               <div className='gallery_div g1'>
-                <img className='gallery_img' src="/portfolio/ensaioestudio/gallery (3).jpg" alt="" />
+                <img className='gallery_img' src="/portfolio/ensaioestudio/gallery (3).webp" alt="" />
                 <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
               </div>
             </motion.div>
           </div>
-          <div className='ensaio_infantil mx-auto'>
-            <motion.h4 variants={upward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1} className='h4 my-4'>Ensaio infantil</motion.h4>
+          <div className='ensaio_infantil'>
+            <motion.h4 variants={upward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1} className='h4 my-4 font-secondary'>Ensaio infantil</motion.h4>
             <motion.div variants={upward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d} className='gallery'>
               <div className='gallery_div active g2'>
-                <img className='gallery_img' src="/portfolio/ensaioinfantil/gallery (1).jpg" alt="" />
+                <img className='gallery_img' src="/portfolio/ensaioinfantil/gallery (1).webp" alt="" />
                 <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
               </div>
               <div className='gallery_div g2'>
-                <img className='gallery_img' src="/portfolio/ensaioinfantil/gallery (2).jpg" alt="" />
+                <img className='gallery_img' src="/portfolio/ensaioinfantil/gallery (2).webp" alt="" />
                 <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
               </div>
               <div className='gallery_div g2'>
-                <img className='gallery_img' src="/portfolio/ensaioinfantil/gallery (3).jpg" alt="" />
+                <img className='gallery_img' src="/portfolio/ensaioinfantil/gallery (3).webp" alt="" />
                 <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
               </div>
               <div className='gallery_div g2'>
-                <img className='gallery_img' src="/portfolio/ensaioinfantil/gallery (4).jpg" alt="" />
+                <img className='gallery_img' src="/portfolio/ensaioinfantil/gallery (4).webp" alt="" />
                 <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
               </div>
             </motion.div>
           </div>
-          <div className='ensaio_moda mx-auto'>
-            <motion.h4 variants={upward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1} className='h4 my-4'>Ensaio de moda</motion.h4>
+          <div className='ensaio_moda'>
+            <motion.h4 variants={upward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1} className='h4 my-4 font-secondary'>Ensaio de moda</motion.h4>
             <motion.div variants={upward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d} className='gallery'>
               <div className='gallery_div active g3'>
-                <img className='gallery_img' src="/portfolio/ensaiomoda/gallery (1).jpg" alt="" />
+                <img className='gallery_img' src="/portfolio/ensaiomoda/gallery (1).webp" alt="" />
                 <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
               </div>
               <div className='gallery_div g3'>
-                <img className='gallery_img' src="/portfolio/ensaiomoda/gallery (2).jpg" alt="" />
+                <img className='gallery_img' src="/portfolio/ensaiomoda/gallery (2).webp" alt="" />
                 <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
               </div>
               <div className='gallery_div g3'>
-                <img className='gallery_img' src="/portfolio/ensaiomoda/gallery (3).jpg" alt="" />
+                <img className='gallery_img' src="/portfolio/ensaiomoda/gallery (3).webp" alt="" />
                 <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
               </div>
               <div className='gallery_div g3'>
-                <img className='gallery_img' src="/portfolio/ensaiomoda/gallery (4).jpg" alt="" />
+                <img className='gallery_img' src="/portfolio/ensaiomoda/gallery (4).webp" alt="" />
                 <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
               </div>
             </motion.div>
           </div>
-          <div className='makingof mx-auto'>
-            <motion.h4 variants={upward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1} className='h4 my-4'>Ensaio de moda</motion.h4>
+          <div className='individual'>
+            <motion.h4 variants={upward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1} className='h4 my-4 font-secondary'>Temáticos e individuais</motion.h4>
+            <motion.div variants={upward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d} className='gallery'>
+              <div className='gallery_div active g5'>
+                <img className='gallery_img' src="/portfolio/individual/gallery (1).webp" alt="" />
+                <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
+              </div>
+              <div className='gallery_div g5'>
+                <img className='gallery_img' src="/portfolio/individual/gallery (2).webp" alt="" />
+                <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
+              </div>
+              <div className='gallery_div g5'>
+                <img className='gallery_img' src="/portfolio/individual/gallery (3).webp" alt="" />
+                <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
+              </div>
+            </motion.div>
+          </div>
+          <div className='makingof'>
+            <motion.h4 variants={upward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1} className='h4 my-4 font-secondary'>Making of</motion.h4>
             <motion.div variants={upward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d} className='gallery'>
               <div className='gallery_div active g4'>
-                <img className='gallery_img' src="/portfolio/makingof/gallery (1).jpg" alt="" />
+                <img className='gallery_img' src="/portfolio/makingof/gallery (1).webp" alt="" />
                 <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
               </div>
               <div className='gallery_div g4'>
-                <img className='gallery_img' src="/portfolio/makingof/gallery (2).jpg" alt="" />
+                <img className='gallery_img' src="/portfolio/makingof/gallery (2).webp" alt="" />
                 <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
               </div>
               <div className='gallery_div g4'>
-                <img className='gallery_img' src="/portfolio/makingof/gallery (3).jpg" alt="" />
+                <img className='gallery_img' src="/portfolio/makingof/gallery (3).webp" alt="" />
                 <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
               </div>
               <div className='gallery_div g4'>
-                <img className='gallery_img' src="/portfolio/makingof/gallery (4).jpg" alt="" />
+                <img className='gallery_img' src="/portfolio/makingof/gallery (4).webp" alt="" />
                 <button className='gallery_view' onClick={(e) => change(e)}><GrFormView  /></button>
               </div>
             </motion.div>
