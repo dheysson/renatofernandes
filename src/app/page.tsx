@@ -115,12 +115,12 @@ export default function Home() {
   return (
     <motion.section className='flex flex-col gap-y-40'>
       {/* HERO  */}
-      <div className='home w-full h-full hidden lg:flex flex-col justify-center items-center mt-48'>
+      <div className='home w-full h-full hidden sm:flex flex-col justify-center items-center mt-48'>
         {/* HERO  */}
-        <div className='flex flex-row w-screen lg:gap-x-40 justify-around lg:justify-center relative px-4'>
+        <div className='flex flex-row w-screen lg:gap-x-20 justify-around lg:justify-center relative px-4'>
           {/* Text & Button */}
           <motion.div variants={lefttoright} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d} className='flex flex-col justify-center gap-y-4 lg:gap-y-14 m-2'>
-            <div className={`w-[16rem] lg:w-full max-w-[36rem]`}>
+            <div className='w-full max-h-[36rem]'>
               <h3 className='h3'>Olá!</h3>
               <h4 className='h4'>Eu sou Renato Fernandes,</h4>
               <h4 className='h4'>Fotógrafo profissional.</h4>
@@ -131,11 +131,13 @@ export default function Home() {
 
           {/* Image  */}
           <motion.div variants={righttoleft} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d}>
-            <img src="/photographer.webp" alt="" className='w-full max-w-[480px]'/>
+            <img src="/photographer.webp" alt="" className='w-full max-w-[380px]'/>
           </motion.div>
 
           <motion.div variants={leftward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1} className='absolute bottom-0 w-full h-[82%] lg:h-[75%] -z-[5] bg-[#d3d3ff]'></motion.div>
         </div>
+
+        {/* SLIDER  */}
         <div className='slider w-full h-[2rem] relative'>
           <motion.div variants={leftward} initial='variantInit' animate='variantAnim' transition={transition1_d} className='absolute items-center left-0 w-full h-full bg-[#131313] text-[#fafafa] text-[1.2rem] font-secondary flex flex-row'>
             <div className='slider-track_d'>
@@ -161,7 +163,7 @@ export default function Home() {
       </div>
 
       {/* HERO - MOBILE  */}
-      <div className='w-full h-full flex lg:hidden flex-col justify-center items-center mt-48'>
+      <div className='w-full h-full flex sm:hidden flex-col justify-center items-center mt-48'>
         {/* HERO  */}
         <div className='flex flex-row w-screen lg:gap-x-40 justify-around lg:justify-center relative pl-4'>
           {/* Text & Button */}
@@ -182,19 +184,22 @@ export default function Home() {
 
           <motion.div variants={leftward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1} className='absolute bottom-0 w-full h-[82%] lg:h-[72%] -z-[5] bg-[#d3d3ff]'></motion.div>
         </div>
-        <div className='slider w-full h-[1.5rem] relative'>
-          <motion.div variants={leftward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d} className='font-secondary items-center absolute left-0 w-full h-full bg-[#131313] text-[#fafafa] text-[0.75rem] flex flex-row'>
-            <div className='slider-track_d'>
-                  <p className='d'>tenha a melhor versão de ti</p>
-                  <p className='d'>tenha a melhor versão de ti</p>
-              </div>
+
+        <div>
+          <div className='slider w-full h-[1.5rem] relative'>
+            <motion.div variants={leftward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d} className='font-secondary items-center absolute left-0 w-full h-full bg-[#131313] text-[#fafafa] text-[0.75rem] flex flex-row'>
               <div className='slider-track_d'>
-                  <p className='d'>tenha a melhor versão de ti</p>
-                  <p className='d'>tenha a melhor versão de ti</p>
-              </div>
-          </motion.div>
+                    <p className='d'>tenha a melhor versão de ti</p>
+                    <p className='d'>tenha a melhor versão de ti</p>
+                </div>
+                <div className='slider-track_d'>
+                    <p className='d'>tenha a melhor versão de ti</p>
+                    <p className='d'>tenha a melhor versão de ti</p>
+                </div>
+            </motion.div>
+          </div>
+          <motion.img variants={upward} initial="variantInit" whileInView="variantAnim" viewport={{once: true}} transition={transition1_d} src="/photographer.webp" alt="" />
         </div>
-        <motion.img variants={upward} initial="variantInit" whileInView="variantAnim" viewport={{once: true}} transition={transition1_d} src="/photographer.webp" alt="" />
       </div>
 
       {/* SOBRE MIM  */}
@@ -204,13 +209,13 @@ export default function Home() {
         </div>
         <div className='flex flex-col gap-y-8 lg:gap-y-0 lg:flex-row w-screen lg:gap-x-40 justify-around lg:justify-center relative items-center px-4'>
           {/* Text & Button */}
-          <motion.div variants={lefttoright} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d} className='order-2 flex flex-col justify-center gap-y-4 lg:gap-y-14 m-2'>
-            <div className='w-[18rem] lg:w-full max-w-[36rem]'>
-              <h3 className='p small lg:medium'>Durante a pandemia, enquanto as aulas eram realizadas remotamente, percebi que eu estava muito tempo ocioso. No entanto, deparei-me com um <b>interessante</b> nicho de conteúdo relacionando à fotografia, 
+          <motion.div variants={lefttoright} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d} className='order-2 flex flex-col justify-center gap-y-4 lg:gap-y-14 m-8'>
+            <div className='w-full max-w-[36rem]'>
+              <h3 className='p small sm:medium'>Durante a pandemia, enquanto as aulas eram realizadas remotamente, percebi que eu estava muito tempo ocioso. No entanto, deparei-me com um <b>interessante</b> nicho de conteúdo relacionando à fotografia, 
               o que despertou minha <b>curiosidade</b>. Comecei a experimentar tirar fotos com meu celular, capturando desde objetos até retratos de amigos e familiares.
               </h3>
               <br />
-              <h3 className='p small lg:medium'>
+              <h3 className='p small sm:medium'>
                 Com o desejo de aprimorar meu <b>conhecimento</b>, comecei a realizar ensaios utilizando um equipamento semiprofissional. 
                 Entretanto, precisei me afastar da fotografia por um período. Agora, em 2023, enquanto trabalho no ramo da beleza e estética, voltei a praticar fotografia 
                 visando aumentar a <b>visibilidade</b> e <b>reconhecimento</b> dos meus trabalhos.
