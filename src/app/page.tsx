@@ -103,7 +103,7 @@ export default function Home() {
   }
 
   const goTo = () => {
-    document.querySelector('.portfolio')?.scrollIntoView({behavior: 'smooth'});
+    document.querySelector('.about')?.scrollIntoView({behavior: 'smooth'});
   }
 
   function goTop() {
@@ -115,7 +115,7 @@ export default function Home() {
   return (
     <motion.section className='flex flex-col gap-y-40'>
       {/* HERO  */}
-      <div className='hero w-full h-full hidden lg:flex flex-col justify-center items-center mt-48'>
+      <div className='home w-full h-full hidden lg:flex flex-col justify-center items-center mt-48'>
         {/* HERO  */}
         <div className='flex flex-row w-screen lg:gap-x-40 justify-around lg:justify-center relative px-4'>
           {/* Text & Button */}
@@ -136,17 +136,36 @@ export default function Home() {
 
           <motion.div variants={leftward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1} className='absolute bottom-0 w-full h-[82%] lg:h-[75%] -z-[5] bg-[#d3d3ff]'></motion.div>
         </div>
-        <div className='slider w-screen h-[1rem] relative'>
-          <motion.div variants={leftward} initial='variantInit' animate='variantAnim' transition={transition1_d} className='absolute left-0 w-full h-full bg-[#131313]'></motion.div>
+        <div className='slider w-full h-[2rem] relative'>
+          <motion.div variants={leftward} initial='variantInit' animate='variantAnim' transition={transition1_d} className='absolute items-center left-0 w-full h-full bg-[#131313] text-[#fafafa] text-[1.2rem] font-secondary flex flex-row'>
+            <div className='slider-track'>
+                <p>tenha a melhor versão de ti</p>
+                <p>tenha a melhor versão de ti</p>
+                <p>tenha a melhor versão de ti</p>
+                <p>tenha a melhor versão de ti</p>
+                <p>tenha a melhor versão de ti</p>
+                <p>tenha a melhor versão de ti</p>
+            </div>
+            <div className='slider-track'>
+                <p>tenha a melhor versão de ti</p>
+                <p>tenha a melhor versão de ti</p>
+                <p>tenha a melhor versão de ti</p>
+                <p>tenha a melhor versão de ti</p>
+                <p>tenha a melhor versão de ti</p>
+                <p>tenha a melhor versão de ti</p>
+            </div>
+            
+          </motion.div>
         </div>
+        
       </div>
 
       {/* HERO - MOBILE  */}
-      <div className='hero w-full h-full flex lg:hidden flex-col justify-center items-center mt-48'>
+      <div className='w-full h-full flex lg:hidden flex-col justify-center items-center mt-48'>
         {/* HERO  */}
-        <div className='flex flex-row w-screen lg:gap-x-40 justify-around lg:justify-center relative px-4'>
+        <div className='flex flex-row w-screen lg:gap-x-40 justify-around lg:justify-center relative pl-4'>
           {/* Text & Button */}
-          <motion.div variants={lefttoright} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d} className='flex flex-col justify-center gap-y-4 lg:gap-y-14 m-2'>
+          <motion.div variants={lefttoright} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d} className='flex flex-col justify-center gap-y-4 lg:gap-y-14 my-4 mx-1'>
             <div className={`w-[16rem] lg:w-full max-w-[36rem]`}>
               <h3 className='h3'>Olá!</h3>
               <h4 className='h4'>Eu sou Renato Fernandes,</h4>
@@ -163,8 +182,17 @@ export default function Home() {
 
           <motion.div variants={leftward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1} className='absolute bottom-0 w-full h-[82%] lg:h-[72%] -z-[5] bg-[#d3d3ff]'></motion.div>
         </div>
-        <div  className='slider w-full h-[0.5rem] relative'>
-          <motion.div variants={leftward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d} className='absolute left-0 w-full h-full bg-[#131313]'></motion.div>
+        <div className='slider w-full h-[1.5rem] relative'>
+          <motion.div variants={leftward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d} className='font-secondary items-center absolute left-0 w-full h-full bg-[#131313] text-[#fafafa] text-[0.75rem] flex flex-row'>
+            <div className='slider-track'>
+                  <p>tenha a melhor versão de ti</p>
+                  <p>tenha a melhor versão de ti</p>
+              </div>
+              <div className='slider-track'>
+                  <p>tenha a melhor versão de ti</p>
+                  <p>tenha a melhor versão de ti</p>
+              </div>
+          </motion.div>
         </div>
         <motion.img variants={upward} initial="variantInit" whileInView="variantAnim" viewport={{once: true}} transition={transition1_d} src="/photographer.webp" alt="" />
       </div>
@@ -172,7 +200,7 @@ export default function Home() {
       {/* SOBRE MIM  */}
       <motion.div className='about w-screen max-h-max relative'>
         <div className='relative w-screen'>
-          <motion.h2 variants={upward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d}  className='h2 portfolio my-3 lg:my-8 lg:mx-0 w-screen text-center'>Sobre mim</motion.h2>
+          <motion.h2 variants={upward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d}  className='h2 aboutme my-3 lg:my-8 lg:mx-0 w-screen text-center'>Sobre mim</motion.h2>
         </div>
         <div className='flex flex-col gap-y-8 lg:gap-y-0 lg:flex-row w-screen lg:gap-x-40 justify-around lg:justify-center relative items-center px-4'>
           {/* Text & Button */}
@@ -224,7 +252,7 @@ export default function Home() {
               </div>
             </motion.div>
           </div>
-          <div className='ensaio_infantil'>
+          <div className='ensaio_infantil-'>
             <motion.h4 variants={upward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1} className='h4 my-4 font-secondary'>Ensaio infantil</motion.h4>
             <motion.div variants={upward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d} className='gallery'>
               <div className='gallery_div active g2'>
@@ -308,7 +336,7 @@ export default function Home() {
       </motion.div>
 
       {/* CONTATO */}
-      <div className='hidden container lg:flex flex-row items-center relative w-screen'>'
+      <div className='contact hidden container lg:flex flex-row items-center relative w-screen'>'
         <div className='flex flex-col items-center w-screen'>
           <motion.h2 variants={upward} initial='variantInit' whileInView='variantAnim' transition={transition1} viewport={{once: true}} className='h2 my-10 text-center'>Contate-me</motion.h2>
           <motion.div variants={upward} initial='variantInit' whileInView='variantAnim' transition={transition1_d} viewport={{once: true}} className='flex flex-row gap-x-10 p-4 lg:p-10 '>

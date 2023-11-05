@@ -123,8 +123,29 @@
     @apply text-[#131313a2];
   }
 
+  .slider-track {
+    @apply pr-6 flex flex-row gap-x-6 animate-[12s_slide_infinite_linear];
+  }
+
+  .slider-track p::after {
+    @apply content-['•'] pl-[1.5rem];
+  }
+  .slider-track p {
+    @apply w-[11rem] lg:w-[256px];
+  }
+
+  @keyframes slide {
+    from {
+      transform: translateX(0%);
+    } to {
+      transform: translateX(-100%);
+
+    }
+  }
+
   ::-webkit-scrollbar {
     width: 10px;
+    z-index: 100;
   }
   /* Track */
   ::-webkit-scrollbar-track {
@@ -133,7 +154,7 @@
   }
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: #333333;
+    background: #131313;
     border-radius: 5px;
   }
   /* Handle on hover */
