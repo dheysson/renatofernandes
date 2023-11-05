@@ -138,21 +138,21 @@ export default function Home() {
         </div>
         <div className='slider w-full h-[2rem] relative'>
           <motion.div variants={leftward} initial='variantInit' animate='variantAnim' transition={transition1_d} className='absolute items-center left-0 w-full h-full bg-[#131313] text-[#fafafa] text-[1.2rem] font-secondary flex flex-row'>
-            <div className='slider-track'>
-                <p>tenha a melhor versão de ti</p>
-                <p>tenha a melhor versão de ti</p>
-                <p>tenha a melhor versão de ti</p>
-                <p>tenha a melhor versão de ti</p>
-                <p>tenha a melhor versão de ti</p>
-                <p>tenha a melhor versão de ti</p>
+            <div className='slider-track_d'>
+                <p className='d'>tenha a melhor versão de ti</p>
+                <p className='d'>tenha a melhor versão de ti</p>
+                <p className='d'>tenha a melhor versão de ti</p>
+                <p className='d'>tenha a melhor versão de ti</p>
+                <p className='d'>tenha a melhor versão de ti</p>
+                <p className='d'>tenha a melhor versão de ti</p>
             </div>
-            <div className='slider-track'>
-                <p>tenha a melhor versão de ti</p>
-                <p>tenha a melhor versão de ti</p>
-                <p>tenha a melhor versão de ti</p>
-                <p>tenha a melhor versão de ti</p>
-                <p>tenha a melhor versão de ti</p>
-                <p>tenha a melhor versão de ti</p>
+            <div className='slider-track_d'>
+                <p className='d'>tenha a melhor versão de ti</p>
+                <p className='d'>tenha a melhor versão de ti</p>
+                <p className='d'>tenha a melhor versão de ti</p>
+                <p className='d'>tenha a melhor versão de ti</p>
+                <p className='d'>tenha a melhor versão de ti</p>
+                <p className='d'>tenha a melhor versão de ti</p>
             </div>
             
           </motion.div>
@@ -184,13 +184,13 @@ export default function Home() {
         </div>
         <div className='slider w-full h-[1.5rem] relative'>
           <motion.div variants={leftward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d} className='font-secondary items-center absolute left-0 w-full h-full bg-[#131313] text-[#fafafa] text-[0.75rem] flex flex-row'>
-            <div className='slider-track'>
-                  <p>tenha a melhor versão de ti</p>
-                  <p>tenha a melhor versão de ti</p>
+            <div className='slider-track_d'>
+                  <p className='d'>tenha a melhor versão de ti</p>
+                  <p className='d'>tenha a melhor versão de ti</p>
               </div>
-              <div className='slider-track'>
-                  <p>tenha a melhor versão de ti</p>
-                  <p>tenha a melhor versão de ti</p>
+              <div className='slider-track_d'>
+                  <p className='d'>tenha a melhor versão de ti</p>
+                  <p className='d'>tenha a melhor versão de ti</p>
               </div>
           </motion.div>
         </div>
@@ -223,6 +223,40 @@ export default function Home() {
             <img src="/photographer.webp" alt="" className='w-[50%] lg:w-full max-w-[480px] rounded-xl'/>
           </motion.div>
 
+        </div>
+
+        <div className='slider w-full h-[2rem] relative'>
+          <motion.div variants={leftward} initial='variantInit' animate='variantAnim' transition={transition1_d} className='absolute items-center left-0 w-full h-full bg-[#131313] text-[#fafafa] text-[1.2rem] font-secondary flex flex-row'>
+            <div className='slider-track'>
+                <p>interessante</p>
+                <p>curiosidade</p>
+                <p>conhecimento</p>
+                <p>visibilidade</p>
+                <p>reconhecimento</p>
+            </div>
+            <div className='slider-track'>
+                <p>interessante</p>
+                <p>curiosidade</p>
+                <p>conhecimento</p>
+                <p>visibilidade</p>
+                <p>reconhecimento</p>
+            </div>
+            <div className='slider-track'>
+                <p>interessante</p>
+                <p>curiosidade</p>
+                <p>conhecimento</p>
+                <p>visibilidade</p>
+                <p>reconhecimento</p>
+            </div>
+            <div className='slider-track'>
+                <p>interessante</p>
+                <p>curiosidade</p>
+                <p>conhecimento</p>
+                <p>visibilidade</p>
+                <p>reconhecimento</p>
+            </div>
+            
+          </motion.div>
         </div>
 
         <motion.div variants={leftward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1} className='absolute bottom-0 w-full h-[82%] lg:h-[88%] -z-[5] bg-[#d3d3ff]'></motion.div>
