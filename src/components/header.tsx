@@ -26,8 +26,12 @@ export default function Header() {
                 <li> <a onClick={() => scrollto('about')} className='a text-[1.1rem] cursor-pointer'>Sobre mim</a> </li>
                 <li> <a onClick={() => scrollto('portfolio')}  className='a text-[1.1rem] cursor-pointer'>Portfólio</a> </li>
                 <li> <a onClick={() => scrollto('contact')} className='a text-[1.1rem] cursor-pointer'>Contato</a> </li>
-                <li> <a href="https://www.instagram.com/_r.f.s._fotografias" className='text-[1rem]'><ImInstagram /></a> </li>
-                <li> <a href="https://wa.me/5569993727578" className='text-[1rem]'><ImWhatsapp /></a> </li>
+                <li> <a target='_blank' href="https://www.instagram.com/_r.f.s._fotografias" className='text-[1rem]'><ImInstagram /></a> </li>
+                <li> <a target='_blank' href="https://wa.me/5569993727578" className='text-[1rem]'><ImWhatsapp /></a> </li>
+            </ul>
+            <ul className='lg:hidden flex flex-row gap-x-8 m-4'>
+                <li><a target='_blank' href="https://www.instagram.com/_r.f.s._fotografias"><ImInstagram className="w-5 h-5" /></a></li>
+                <li><a target='_blank' href="https://wa.me/5569993727578"><ImWhatsapp className="w-5 h-5" /></a></li>
             </ul>
         </motion.header>
     )

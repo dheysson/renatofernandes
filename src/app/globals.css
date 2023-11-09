@@ -54,7 +54,7 @@
   }
 
   .p {
-    @apply font-normal max-w-[43rem] leading-[110%] font-secondary;
+    @apply font-normal max-w-[43rem] leading-[120%] font-secondary;
   }
 
   .p.large {

@@ -184,21 +184,23 @@ export default function Home() {
 
           <motion.div variants={leftward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1} className='absolute bottom-0 w-full h-[82%] lg:h-[72%] -z-[5] bg-[#d3d3ff]'></motion.div>
         </div>
-
         <div>
-          <div className='slider w-full h-[1.5rem] relative'>
-            <motion.div variants={leftward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d} className='font-secondary items-center absolute left-0 w-full h-full bg-[#131313] text-[#fafafa] text-[0.75rem] flex flex-row'>
+
+        {/* SLIDER  */}
+        <div className='slider w-full h-[1.5rem] relative'>
+          <motion.div variants={leftward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d} className='font-secondary items-center absolute left-0 w-full h-full bg-[#131313] text-[#fafafa] text-[0.75rem] flex flex-row'>
+            <div className='slider-track_d'>
+                  <p className='d'>tenha a melhor versão de ti</p>
+                  <p className='d'>tenha a melhor versão de ti</p>
+              </div>
               <div className='slider-track_d'>
-                    <p className='d'>tenha a melhor versão de ti</p>
-                    <p className='d'>tenha a melhor versão de ti</p>
-                </div>
-                <div className='slider-track_d'>
-                    <p className='d'>tenha a melhor versão de ti</p>
-                    <p className='d'>tenha a melhor versão de ti</p>
-                </div>
-            </motion.div>
-          </div>
-          <motion.img variants={upward} initial="variantInit" whileInView="variantAnim" viewport={{once: true}} transition={transition1_d} src="/photographer.webp" alt="" />
+                  <p className='d'>tenha a melhor versão de ti</p>
+                  <p className='d'>tenha a melhor versão de ti</p>
+              </div>
+          </motion.div>
+        </div>
+
+        <motion.img variants={upward} initial="variantInit" whileInView="variantAnim" viewport={{once: true}} transition={transition1_d} src="/photographer.webp" alt="" />
         </div>
       </div>
 
@@ -225,7 +227,7 @@ export default function Home() {
 
           {/* Image  */}
           <motion.div variants={righttoleft} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d} className='order-1 flex flex-row justify-center'>
-            <img src="/photographer.webp" alt="" className='w-[50%] lg:w-full max-w-[480px] rounded-xl'/>
+            <img src="/photographer2.png" alt="" className='w-[50%] lg:w-full max-w-[480px] rounded-xl'/>
           </motion.div>
 
         </div>
@@ -435,10 +437,10 @@ export default function Home() {
 
                 <div className='flex flex-row gap-x-2'>
                   <button className='btn px-4'>
-                    <a href="https://www.instagram.com/_r.f.s._fotografias"><ImInstagram className='w-6 h-6 hover:scale-110'/></a>
+                    <a target='_blank' href="https://www.instagram.com/_r.f.s._fotografias"><ImInstagram className='w-6 h-6 hover:scale-110'/></a>
                   </button>
                   <button className="btn px-4">
-                    <a href="https://wa.me/5569993727578"><ImWhatsapp className='w-6 h-6 hover:scale-110'/></a>
+                    <a target='_blank' href="https://wa.me/5569993727578"><ImWhatsapp className='w-6 h-6 hover:scale-110'/></a>
                   </button>
                 </div>
               </div>
