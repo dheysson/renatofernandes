@@ -1,5 +1,7 @@
 import './globals.css'
+import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from 'next'
+
  
 //import header
 import Header from '../components/header';
@@ -19,6 +21,7 @@ export default function RootLayout({
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"></link>
         <Header />
         {children }
+        <Analytics />
       </body>
     </html>
   )

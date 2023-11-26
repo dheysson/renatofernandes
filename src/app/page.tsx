@@ -227,7 +227,7 @@ export default function Home() {
 
           {/* Image  */}
           <motion.div variants={righttoleft} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1_d} className='order-1 flex flex-row justify-center'>
-            <img src="/photographer2.png" alt="" className='w-[50%] lg:w-full max-w-[480px] rounded-xl'/>
+            <img src="/photographer2.png" alt="" className='w-[50%] lg:w-full max-w-[480px] rounded-xl lg:rounded-t-xl lg:rounded-b-none'/>
           </motion.div>
 
         </div>
