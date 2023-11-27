@@ -134,7 +134,7 @@ export default function Home() {
             <img src="/photographer.webp" alt="" className='w-full max-w-[380px]'/>
           </motion.div>
 
-          <motion.div variants={leftward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1} className='absolute bottom-0 w-full h-[82%] lg:h-[75%] -z-[5] bg-[#d3d3ff]'></motion.div>
+          <motion.div variants={leftward} initial='variantInit' whileInView='variantAnim' viewport={{once: true}} transition={transition1} className='absolute bottom-0 w-full h-[85%] lg:h-[80%] -z-[5] bg-[#d3d3ff]'></motion.div>
         </div>
 
         {/* SLIDER  */}
