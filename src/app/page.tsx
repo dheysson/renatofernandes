@@ -389,7 +389,7 @@ export default function Home() {
                 </div>
                 <input type="text" name='message' id='message' placeholder='mensagem' onChange={(e) => handleChange(e)}/>
                 
-                <button className='btn px-6 lg:px-[42px] max-w-max'> <BsSend /> </button>
+                <button className='btn px-6 lg:px-[42px] max-w-max'> enviar </button>
               </form>
             </div>
             {/* <div className='flex flex-col gap-y-8'> */}
